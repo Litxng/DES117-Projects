@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Web Design</title>
+
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+
+
+    <!--CSS Stylesheets-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <link href="article.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="logo">Lia's Blog</div>
+
+        <!--Hamburger Toggle-->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+
+        <nav id="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#teaser">Blog</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="title">
+        <h1> Learning Web Design </h1>
+
+        <nav id="pageNav">
+            <ul>
+                <li id="previousArrow">
+                    <p class="icon"><i class="fa-solid fa-arrow-left-long"></i></p>
+                    <a href="post3.html">Previous Post</a>
+                </li>
+                <li id="nextArrow">
+                    <a href="post5.html">Next Post</a>
+                    <p class="icon"><i class="fa-solid fa-arrow-right-long"></i></p>
+                </li>
+            </ul>
+        </nav>
+    </section>
+
+    <section id="article">
+
+        <article>
+            <img id="headerimg" src="https://placecats.com/bella/1000/300" alt="CSS Learning">
+            <div id="line"></div>
+
+            <div id="wrapper">
+
+                <h2> Learning Web Design </h2>
+                <time datetime="2025-07-14"> July 21st, 2025</time>
+                <p> <em>Learning Web Design</em> is a great book for beginners to learn about HTML and CSS. It goes
+                    in-depth about each HTML and CSS element, but still makes things short and simple to understand. I
+                    highly recommend this textbook to beginning UI/UX Designers who want to add another skill to their
+                    toolbox.</p>
+
+                <p>Today, I wanted to share something I found super fun and interesting from Chapter 15, Floating and
+                    Positioning. The chapter talks about text wrapping—but not just the basic kind. It goes into how you
+                    can wrap text around transparent images, which was something we didn’t cover in class.</p>
+
+                <p>What caught my attention was how CSS handles transparent PNGs and how the text doesn’t just float
+                    around a box—it wraps around the visible part of the image, depending on how it’s styled. I loved
+                    this because it opens up a lot of creative possibilities for layout design, and it’s one of those
+                    small but impactful details that can elevate the way a webpage looks.</p>
+
+                <img id="blogphoto" src="images/path.png" alt="image of me experimenting with shape-outside">
+
+                <p> I’ve been playing around with the CSS shape-outside property, and it’s been really fun to experiment
+                    with! I added a shape-margin to create space between the circular image and the text, and while it
+                    helped, the text in the middle still ends up touching the edge of the circle more than I’d like. It
+                    definitely needs a bit more fine-tuning.</p>
+
+                <p>Even with that, I think this technique is super fun—especially for creative layouts like menu designs
+                    or any page where you want text to wrap around a cool shape instead of just a boring box. It’s
+                    something I want to keep experimenting with!</p>
+            </div>
+        </article>
+
+    </section>
+    <footer></footer>
+
+</body>
+
+</html>

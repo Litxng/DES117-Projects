@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lia - Portal Page</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="styles.css" rel="Stylesheet">
+
+
+
+</head>
+
+<body>
+    <header>
+        <section id="portalHeader">
+            <div class="webpageContent">
+                <div class="topBar">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="searchBar">
+                        <!--<p>https://www.home.com</p>-->
+                    </div>
+                </div>
+
+                <div class="wrapper">
+                    <picture id="me">
+                        <source srcset="assets/meDesktop.png" media="(min-width: 1020px)">
+                        <source srcset="assets/me_2.svg" media="(max-width: 600px)">
+                        <img src="assets/me_2.svg" alt="Me">
+                    </picture>
+                    <h1 id="headertext-top">
+                        Hi I am <span id="headerOne">Lia</span>, I am a
+                    </h1>
+
+                    <h2 id="headertext-mid">UI/UX Designer</h2>
+
+
+                    <div class="folderNav">
+                        <label for="aboutmepopupToggle" id="purpleFolder">
+                            <img src="assets/folder2.png" alt="purple folder">
+                            <p>about me</p>
+                        </label>
+                        <label for="majorProjectPopupToggle" id="pinkFolder">
+                            <img src="assets/folder.png" alt="pink folder">
+                            <p>major projects</p>
+                        </label>
+                        <label for="exercisesPopupToggle" id="blueFolder">
+                            <img src="assets/folder3.png" alt="blue folder">
+                            <p>Class Exercises</p>
+                        </label>
+                        <label for="toolsPopupToggle" id="greenFolder">
+                            <img src="assets/folder4.png" alt="green folder">
+                            <p>useful link & tools</p>
+                        </label>
+                    </div>
+                </div>
+
+
+
+        </section>
+
+    </header>
+
+    <input type="checkbox" id="aboutmepopupToggle" hidden>
+
+    <section class="aboutmePopup">
+        <div class="aboutmePage">
+            <div class="topControl">
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-right"></i>
+
+                <label for="aboutmepopupToggle" class="close-btn" aria-label="Close popup">
+                    <i class="fas fa-xmark"></i>
+                </label>
+            </div>
+            <div class="aboutmesearchBar">
+                <p>https://liaportalpage/aboutme</p>
+            </div>
+
+            <div class="aboutMecontent">
+                <h1>About <span style="color: #C886FF;">Me</span></h1>
+                <img src="assets/aboutme.png" width="176" height="234" alt="about me image">
+                <p>Hi! My name is Lia and I am currently a junior in UC Davis. I am double majoring in Design and Cognitive sciences in hopes of becoming a UI/UX designer in the future. I love playing games and reading!</p>
+            </div>
+
+        </div>
+    </section>
+
+    <input type="checkbox" id="majorProjectPopupToggle" hidden>
+
+    <section class="majorProjectPopup">
+        <div class="majorProjectPage">
+            <div class="topControl" id="pink">
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-right"></i>
+
+                <label for="majorProjectPopupToggle" class="close-btn" aria-label="Close popup">
+                    <i class="fas fa-xmark"></i>
+                </label>
+            </div>
+
+            <div class="aboutmesearchBar" id="pink">
+                <p>https://liaportalpage/majorprojects</p>
+            </div>
+
+            <div class="majorProjectMecontent" id="mp">
+                <div class="mpframe">
+                    <h2><a href="blog/index.html">Blog</a></h2>
+                    <iframe src="blog/index.html"></iframe>
+                </div>
+                <div class="mpframe">
+                    <h2><a href="InteractiveNarrative/index.html">Interactive Narrative</a></h2>
+                    <iframe src="InteractiveNarrative/index.html"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Class Exercises Popup -->
+    <input type="checkbox" id="exercisesPopupToggle" hidden>
+
+    <section class="exercisesPopup">
+        <div class="exercisesPage">
+            <div class="topControl" id="blue">
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-right"></i>
+
+                <label for="exercisesPopupToggle" class="close-btn" aria-label="Close popup">
+                    <i class="fas fa-xmark"></i>
+                </label>
+            </div>
+
+            <div class="aboutmesearchBar" id="blue">
+                <p>https://liaportalpage/exercises</p>
+            </div>
+
+            <div class="exercisesContent">
+                <div class="exerciseFrameSection">
+                    <h2><a href="Liu/index.html" target="_blank">Personal Page</a></h2>
+                    <iframe src="Liu/index.html"></iframe>
+                </div>
+
+                <div class="exerciseFrameSection">
+                    <h2><a href="lemmingarticle/index.html" target="_blank">External Stylesheet Practice</a></h2>
+                    <iframe src="lemmingarticle/index.html"></iframe>
+                </div>
+
+                <div class="exerciseFrameSection">
+                    <h2><a href="Liu-Markup/index.html" target="_blank">Article with Styling</a></h2>
+                    <iframe src="Liu-Markup/index.html"></iframe>
+                </div>
+
+                <div class="exerciseFrameSection">
+                    <h2><a href="fonttest/index.html" target="_blank">Font Test</a></h2>
+                    <iframe src="fonttest/index.html"></iframe>
+                </div>
+
+                <div class="exerciseFrameSection">
+                    <h2><a href="css-backgrounds/index.html" target="_blank">CSS Background</a></h2>
+                    <iframe src="css-backgrounds/index.html"></iframe>
+                </div>
+
+                <div class="exerciseFrameSection">
+                    <h2><a href="backgroundtexture/index.html" target="_blank">Custom Background Image: Repeated Texture
+                            Image</a></h2>
+                    <iframe src="backgroundtexture/index.html"></iframe>
+                </div>
+
+                <div class="exerciseFrameSection">
+                    <h2><a href="flexbox-part1-challenges-START" target="_blank">Flexbox Part 1 Challenge</a>
+                    </h2>
+                    <iframe src="flexbox-part1-challenges-START"></iframe>
+                </div>
+
+                <div class="exerciseFrameSection">
+                    <h2><a href="Flexbox-part2-challenges-START" target="_blank">Flexbox Part 2 Challenge</a>
+                    </h2>
+                    <iframe src="Flexbox-part2-challenges-START"></iframe>
+                </div>
+
+                <div class="exerciseFrameSection">
+                    <h2><a href="Flexbox-Part3-Challenges/index.html" target="_blank">Flexbox Part 3 Challenge</a>
+                    </h2>
+                    <iframe src="Flexbox-Part3-Challenges/index.html"></iframe>
+                </div>
+
+                <div class="exerciseFrameSection">
+                    <h2><a href="flexbox-layout-challenges-START" target="_blank">Flexbox Layout
+                            Challenge</a></h2>
+                    <iframe src="flexbox-layout-challenges-START/"></iframe>
+                </div>
+
+                <div class="exerciseFrameSection">
+                    <h2><a href="pirate/index.html" target="_blank">Responsive Design</a></h2>
+                    <iframe src="pirate/index.html"></iframe>
+                </div>
+
+                <div class="exerciseFrameSection">
+                    <h2><a href="grid-challenges-start" target="_blank">Grid Challenges</a></h2>
+                    <iframe src="grid-challenges-start"></iframe>
+                </div>
+
+                <div class="exerciseFrameSection">
+                    <h2><a href="positioning-challenges-start" target="_blank">CSS Positioning Challenges</a>
+                    </h2>
+                    <iframe src="positioning-challenges-start"></iframe>
+                </div>
+
+                <div class="exerciseFrameSection">
+                    <h2><a href="dropdownmenus-start/" target="_blank">Drop Down Menus</a>
+                    </h2>
+                    <iframe src="dropdownmenus-start/"></iframe>
+                </div>
+                <div class="exerciseFrameSection">
+                    <h2><a href="CSS-Animation-START/" target="_blank">CSS Animations</a>
+                    </h2>
+                    <iframe src="CSS-Animation-START/"></iframe>
+                </div>
+                <div class="exerciseFrameSection">
+                    <h2><a href="SimpleAnimation-START/" target="_blank">Simple CSS Animations</a>
+                    </h2>
+                    <iframe src="SimpleAnimation-START/index.html"></iframe>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Useful Links & Tools Popup -->
+    <input type="checkbox" id="toolsPopupToggle" hidden>
+
+    <section class="toolsPopup">
+        <div class="toolsPage">
+            <div class="topControl" id="green">
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-right"></i>
+
+                <label for="toolsPopupToggle" class="close-btn" aria-label="Close popup">
+                    <i class="fas fa-xmark"></i>
+                </label>
+            </div>
+
+            <div class="aboutmesearchBar" id="green">
+                <p>https://liaportalpage/tools</p>
+            </div>
+
+            <div class="toolsContent">
+                <div class="toolsFrameSection">
+                    <h2><a href="https://cssgradient.io/">Gradient Tool</a></h2>
+                    <iframe src="https://cssgradient.io/"></iframe>
+                </div>
+
+                <div class="toolsFrameSection">
+                    <h2><a href="https://fonts.google.com/">Google Fonts</a></h2>
+                    <iframe src="https://fonts.google.com/"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

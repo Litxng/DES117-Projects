@@ -1,0 +1,97 @@
+html {
+    scroll-behavior: smooth;
+}
+
+article {
+    width: 700px;
+    margin: auto;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+
+section p {
+    line-height: 2em;
+    font-size: 20px;
+    padding: 10px;
+}
+
+section h2 {
+    background-color: black;
+    color: white;
+    padding: 1rem;
+}
+
+.introduction {
+    border: 5px solid rgb(100, 149, 237);
+    border-image: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%) 1;
+    padding: 1rem;
+    font-family: fantasy;
+}
+
+/* description css */
+
+#description {
+    background-color: #71a5de;
+    padding: 0.5rem;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+
+/* behavior css */
+
+#behavior {
+    background-color: #83b0e1;
+    padding: 0.5rem;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+
+/* misconception */
+
+#misconceptions {
+    background-color: #aecbeb;
+    padding: 0.5rem;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+/* culture css */
+
+#culture {
+    background-color: #e1ecf7;
+    padding: 0.5rem;
+    border-radius: 20px;
+}
+
+/* nav css */
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    padding: 1rem;
+    margin: 1rem;
+    text-align: center;
+    border: 1px solid rgb(100, 149, 237);
+    border-image: linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%) 1;
+    letter-spacing: 2px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+a:link {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:visited {
+    text-decoration: none;
+}

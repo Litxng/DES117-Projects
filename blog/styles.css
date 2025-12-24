@@ -1,0 +1,369 @@
+body {
+    background-color: black;
+    color: white;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+header h1 {
+    font-family: "Orbitron", sans-serif;
+}
+
+
+h2,
+p,
+a {
+    font-family: "Space Mono", monospace;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 1rem;
+    position: relative;
+}
+
+#headerandimage {
+    display: flex;
+}
+
+#headerandimage img {
+    border-radius: 50%;
+    filter: drop-shadow(0 0 0.75rem #977DFF);
+}
+
+.logo {
+    font-size: 1.5rem;
+}
+
+nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: black;
+    width: 100%;
+    z-index: 1;
+}
+
+nav ul {
+    list-style: none;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+nav li {
+    padding: 0.5rem 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.menu-icon {
+    font-size: 3rem;
+    cursor: pointer;
+    display: block;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-toggle:checked+.menu-icon+nav {
+    display: block;
+}
+
+#exploreSection h1 {
+    font-family: Orbitron;
+    font-size: 6em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%;
+    margin-top: 0;
+}
+
+.line1,
+.line2 {
+    display: block;
+}
+
+#blogText {
+    background: linear-gradient(90deg, #03F 0%, #977DFF 19.23%, #FFCCF2 47.12%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: Orbitron;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+#explore {
+    display: flex;
+    margin-top: -30px;
+    gap: 20px;
+}
+
+#gradientRectangle {
+    width: 64px;
+    height: 220px;
+    flex-shrink: 0;
+    background: linear-gradient(180deg, #6564FE 0%, #6F63C9 17.79%, #E9BBF4 100%);
+}
+
+#rectangleExplore {
+    box-sizing: border-box;
+    width: 100%;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: white;
+    color: black;
+    padding: 2em;
+}
+
+#rectangleExplore h3 {
+    text-align: center;
+    font-family: Orbitron;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+#rectangleExplore a {
+    font-family: "Space Mono";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 12.621px;
+    padding-left: 22px;
+    padding-right: 22px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0px 2.524px 2.524px 0px rgba(0, 0, 0, 0.25);
+}
+
+#rectangleExplore a:visited {
+    color: white;
+}
+
+#newBlog {
+    margin-top: 34px;
+    display: flex;
+}
+
+#newBlog h1 {
+    color: #FFF;
+    font-family: Orbitron;
+    font-size: 6em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    margin-left: -20px;
+    margin-top: 0;
+    margin-bottom: 0;
+
+}
+
+#newBlogPost {
+    background: #6564FE;
+    padding: 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+
+#newBlogPost * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: transparent;
+}
+
+#newBlogPost h2 {
+    font-size: 2em;
+    font-weight: 700;
+}
+
+#newBlogPost time {
+    font-size: 0.9em;
+    font-style: italic;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+#newBlogPost p {
+    font-size: 1em;
+    margin-top: 20px;
+
+}
+
+#newBlogPost a {
+    text-decoration: none;
+    color: white;
+    background: black;
+    font-size: 1.2em;
+    margin: 15px 0 auto auto;
+    padding: 10px 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: #2A2356;
+    padding: 1.5em;
+    border-radius: 12px;
+    color: white;
+    max-width: 100%;
+    margin: 2em auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+}
+
+.card h2 {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 0;
+    color: white;
+    text-shadow: 2px 2px 6px #6ECBF5;
+}
+
+
+.card img {
+    border-radius: 10px;
+    margin-top: 20px;
+    border: #977DFF solid 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+}
+
+.card time {
+    font-size: 0.9em;
+    font-family: "Space Mono", monospace;
+}
+
+.card p {
+    color: white;
+    font-size: 1em;
+}
+
+.card a {
+    background: black;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    border-radius: 20px;
+    padding: 10px 20px 10px 20px;
+    margin: 0 0 0 auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+}
+
+@media only screen and (min-width: 1020px) {
+
+    nav {
+        display: flex;
+        justify-content: center;
+        flex: 1;
+        position: static;
+        background: transparent;
+        width: auto;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        gap: 4rem;
+    }
+
+    nav li {
+        padding: 0;
+        font-size: 1.5em;
+    }
+
+    .menu-icon,
+    .menu-toggle {
+        display: none;
+    }
+
+    .logo {
+        justify-content: flex-start;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        border: 3px solid white;
+        padding: 5px 40px;
+        border-radius: 20px;
+        position: relative;
+    }
+
+    #exploreSection {
+        margin-top: 2rem;
+    }
+
+    #headerandimage {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #headerandimage h1 {
+        font-size: 9.5em;
+    }
+
+    .line1,
+    .line2 {
+        display: inline;
+    }
+
+    .line1::after {
+        content: " ";
+    }
+
+    #teaser {
+        display: flex;
+        gap: 20px;
+    }
+
+    .card {
+        flex: 1;
+    }
+
+}

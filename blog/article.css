@@ -1,0 +1,271 @@
+body {
+    background-color: black;
+    color: white;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 1rem;
+    position: relative;
+}
+
+h4 {
+    color: #6564FE;
+}
+
+/* nav bar */
+
+/* Logo */
+.logo {
+    font-size: 1.5rem;
+}
+
+/* Hide nav by default */
+#navbar {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: black;
+    width: 100%;
+    z-index: 1;
+}
+
+#navbar ul {
+    list-style: none;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#navbar li {
+    padding: 0.5rem 0;
+}
+
+#navbar a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+/* Hamburger icon */
+.menu-icon {
+    font-size: 3rem;
+    cursor: pointer;
+    display: block;
+}
+
+/* Hide the checkbox */
+.menu-toggle {
+    display: none;
+}
+
+/* Show nav when checkbox is checked */
+.menu-toggle:checked+.menu-icon+#navbar {
+    display: block;
+}
+
+#title h1 {
+    color: #FFF;
+    font-family: Orbitron;
+    font-size: 3em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+}
+
+#pageNav ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+}
+
+#pageNav li {
+    color: #FFF;
+    font-family: "Anonymous Pro";
+    font-size: 1.2em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    flex: 1;
+}
+
+#pageNav a {
+    color: white;
+    text-decoration: none;
+}
+
+#pageNav a:hover {
+    text-decoration: underline;
+}
+
+#previousArrow {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    justify-content: flex-start;
+}
+
+#nextArrow {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    justify-content: flex-end;
+}
+
+
+.icon {
+    color: white;
+    font-size: 1.2em;
+}
+
+#article {
+    display: flex;
+    flex-direction: column;
+}
+
+#headerimg {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.imgCard img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+
+#line {
+    margin-top: 21px;
+    height: 7px;
+    width: 100%;
+    background: linear-gradient(90deg, #6564FE 0%, #9885FA 51.77%, #E9BBF4 100%);
+}
+
+#article h2 {
+    font-family: "Space Mono";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+#article p {
+    color: #FFF;
+    font-family: "Anonymous Pro";
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (min-width: 1020px) {
+
+    #navbar {
+        display: flex;
+        justify-content: center;
+        flex: 1;
+        position: static;
+        background: transparent;
+        width: auto;
+    }
+
+    #navbar ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        gap: 4rem;
+    }
+
+    #navbar li {
+        padding: 0;
+        font-size: 1.5em;
+    }
+
+    .menu-icon,
+    .menu-toggle {
+        display: none;
+    }
+
+    .logo {
+        justify-content: flex-start;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        border: 3px solid white;
+        padding: 5px 40px;
+        border-radius: 20px;
+        position: relative;
+    }
+
+    #article h2 {
+        font-size: 1.8em;
+    }
+
+    #article p {
+        font-size: 1.3em;
+    }
+
+    #article h4 {
+        font-size: 1.6em;
+    }
+
+
+    .imgCard img {
+        width: 30vw;
+        /* 50% of viewport width */
+        height: auto;
+    }
+
+    .imgCardWrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .imgCard {
+        display: flex;
+        gap: 20px;
+    }
+
+    #wrapper {
+        width: 800px;
+        margin: auto;
+    }
+
+    #blogphoto {
+        width: 30vw;
+        height: auto;
+        border-radius: 20px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
