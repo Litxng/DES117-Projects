@@ -1,0 +1,993 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Hide all screens by default */
+.screen {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* intro screen position */
+#introScreen:checked~.introScreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+}
+
+
+/* Hide all shop dialogues by default */
+.shopScreen .dialogue {
+  display: none;
+}
+
+.dialogue {
+  display: none;
+}
+
+
+/*make treasureScreen visible when treasureScreen is clicked*/
+#treasureScreen:checked~.treasureScreen .dialogue {
+  display: block;
+}
+
+
+/*make homescreen, messagescreen, shopscreen visible when clicked*/
+#homeScreen:checked~.homeScreen,
+#messageScreen:checked~.messageScreen,
+#shopScreen:checked~.shopScreen {
+  display: block;
+}
+
+/* Old Man Dialogue controls */
+#greet:checked~.oldManScreen #dialogueGreet,
+#replyOptionOne:checked~.oldManScreen #replyOptionOne,
+#oldManYes:checked~.oldManScreen #oldManYes,
+#oldManNo:checked~.oldManScreen #oldManNo,
+#replyOptionTwo:checked~.oldManScreen #replyOptionTwo,
+#OldManStory:checked~.oldManScreen #OldManStory,
+#OldManHope:checked~.oldManScreen #OldManHope,
+#replyOptionFour:checked~.oldManScreen #replyOptionFour,
+#oldManEnd:checked~.oldManScreen #oldManEnd {
+  display: block;
+}
+
+/*dialogue controls*/
+#starDialogueScreen:checked~.starDialogueScreen,
+#starBuyScreen:checked~.starBuyScreen,
+#starStoryScreen:checked~.starStoryScreen,
+#bunnyDialogueScreen:checked~.bunnyDialogueScreen,
+#bunnyBuyScreen:checked~.bunnyBuyScreen,
+#bunnyStoryScreen:checked~.bunnyStoryScreen,
+#loveLetterDialogueScreen:checked~.loveLetterDialogueScreen,
+#loveLetterBuyScreen:checked~.loveLetterBuyScreen,
+#loveLetterStoryScreen:checked~.loveLetterStoryScreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+/* Hide all dialogues inside shopScreen */
+.shopScreen .dialogue {
+  display: none;
+}
+
+
+
+p,
+label,
+blockquote {
+  font-family: DotGothic16;
+}
+
+h1,
+h3 {
+  font-family: "Pixelify Sans";
+}
+
+
+
+body {
+  background-image: url(assets/background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+  min-height: 100vh;
+}
+
+/*intro screen css*/
+
+.introScreen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+
+.introBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(assets/background.png);
+  background-size: cover;
+  background-position: center;
+  filter: blur(5px);
+  z-index: 0;
+
+}
+
+.introductionBox {
+  position: relative;
+  z-index: 1;
+  background: #527ACD;
+  border-radius: 30px;
+  box-shadow: 0 4px 12.4px 13px rgba(24, 0, 129, 0.25);
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  width: 90%;
+}
+
+
+.introductionBox h1 {
+  color: #221E45;
+  text-align: center;
+  text-shadow: 4.364px 8.727px 2.691px rgba(74, 0, 139, 0.25);
+  font-size: 7em;
+}
+
+.introductionBox p {
+  color: #FFF;
+  text-align: center;
+  font-family: DotGothic16;
+  font-size: 2em;
+  line-height: 1.5;
+}
+
+.startButton {
+  background: #322E59;
+  font-family: DotGothic16;
+  font-size: 2.5em;
+  color: #FFF;
+  text-align: center;
+  padding: 11px;
+}
+
+.startButton:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* home screen css */
+
+.player {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  width: 300px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.player h3 {
+  color: #EDEDED;
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+audio {
+  width: 100%;
+  outline: none;
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.homeBottle {
+  width: 189px;
+  height: 189px;
+  aspect-ratio: 1/1;
+  position: absolute;
+  top: 400px;
+  left: 228px;
+}
+
+.homeBottle:hover {
+  filter: drop-shadow(0 0 30px #0FF0FC);
+  transform: scale(1.05);
+  transition: filter 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+
+}
+
+.homeOldman {
+  width: 292px;
+  height: 243px;
+  flex-shrink: 0;
+  aspect-ratio: 292/243;
+  position: absolute;
+  top: 436px;
+}
+
+.homeOldman:hover {
+  filter: drop-shadow(0 0 30px #0FF0FC);
+  transform: scale(1.05);
+  transition: filter 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.homeTreasure {
+  flex-shrink: 0;
+  width: 424px;
+  height: 407;
+  aspect-ratio: 424/407;
+  position: absolute;
+  bottom: -60px;
+  right: -90px;
+  transition: filter 0.3s ease;
+}
+
+.homeTreasure:hover {
+  filter: drop-shadow(0 0 30px #0FF0FC);
+  transform: scale(1.05);
+  transition: filter 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+/* bottle start screen */
+
+#bottleScreen:checked~.bottleScreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bottleStart {
+  background-color: #EDEDED;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 37px 52px 37px;
+
+}
+
+.bottleImg img {
+  width: 361px;
+  height: 361px;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+  text-align: center;
+}
+
+.dialogueBox {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.dialogueBox p {
+  font-size: 2em;
+  text-align: center;
+}
+
+.dialogueButton {
+  background-color: #2D1B4D;
+  color: #F4E9DC;
+  font-size: 2em;
+  text-align: center;
+  padding: 11px 0;
+  flex: 1;
+}
+
+.dialogueButton:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#messageScreen:checked~.messageScreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bottleMessage {
+  background-color: #EDEDED;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0 37px 52px 37px;
+}
+
+.bottleMessage p {
+  font-size: 2em;
+  text-align: center;
+}
+
+.messageBox {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/*message screen css*/
+
+#messageReplyScreen:checked~.messageReplyScreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.bottleMessage blockquote {
+  border-left: 4px solid #2D1B4D;
+  padding-left: 1em;
+  margin: 1.5em 0;
+  font-style: italic;
+  font-size: 2em;
+  color: black;
+  quotes: "“" "”" "‘" "’";
+  position: relative;
+}
+
+.messageBox form input[type="text"] {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1.5em;
+  padding: 0.3em 0.5em;
+}
+
+/* old man screen */
+#oldManScreen:checked~.oldManScreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.dialogueBox h3 {
+  font-size: 2em;
+  text-align: center;
+}
+
+.dialogueWrapper {
+  background-color: #EDEDED;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 52px 37px 52px 37px;
+  gap: 20px;
+}
+
+.replyButton {
+  background-color: #2D1B4D;
+  color: #F4E9DC;
+  font-size: 2em;
+  text-align: center;
+  padding: 11px 0 11px 0;
+}
+
+.replyButton:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.replyOptionButton {
+  background-color: #2D1B4D;
+  color: #F4E9DC;
+  font-size: 2em;
+  text-align: center;
+  padding: 11px 0 11px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.replyOptionButton:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.dialogueText {
+  max-height: 200px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+/*treasure screen css*/
+
+.treasurekeeperdialogueImg {
+  width: 319px;
+  height: 266px;
+  flex-shrink: 0;
+  aspect-ratio: 319/266;
+  text-align: center;
+}
+
+#treasureScreen:checked~.treasureScreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/*shop css*/
+
+.shop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.shopMenu h2 {
+  color: #EDEDED;
+  text-align: center;
+  font-family: "Pixelify Sans";
+  font-size: 3em;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+}
+
+.shopMenu {
+  background: #2D1B4D;
+  box-shadow: 0 4px 12.4px 7px rgba(0, 34, 255, 0.25);
+  color: #EDEDED;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 90%;
+  height: 90%;
+  gap: 30px;
+}
+
+
+.shopMenu h3 {
+  color: #2D1B4D;
+  text-align: center;
+  font-family: "Pixelify Sans";
+  font-size: 3em;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.shopButton {
+  color: #EDEDED;
+  text-align: center;
+  font-family: "Pixelify Sans";
+  font-size: 2.5em;
+  font-weight: 400;
+  border-radius: 10px;
+  background: #322E59;
+}
+
+.shopButton:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.shopCards {
+  background: #EDEDED;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.Star,
+.bunny,
+.loveLetter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Star img,
+.bunny img,
+.loveLetter img {
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+  text-align: center;
+}
+
+
+.shopScroll {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-height: 600px;
+  overflow-y: auto;
+  padding: 10px;
+  width: 100%;
+}
+
+.dialogueBoxScroll {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 10px;
+  width: 100%;
+}
+
+.dialogueBox blockquote {
+  border-left: 4px solid #2D1B4D;
+  padding-left: 1em;
+  font-style: italic;
+  font-size: 1.5em;
+  color: black;
+  quotes: "“" "”" "‘" "’";
+  position: relative;
+}
+
+.selectionButton {
+  background-color: #2D1B4D;
+  color: #F4E9DC;
+  font-size: 2em;
+  text-align: center;
+  padding: 11px 0 11px 0;
+}
+
+.selectionButton:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.starDialogueImg,
+.bunnyDialogueImg,
+.loveLetterDialogueImg {
+  width: 250px;
+  height: 250px;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+
+}
+
+.starStoryDialogue p,
+.bunnyStoryDialogue p,
+.loveLetterStoryDialogue p {
+  font-size: 1.5em;
+}
+
+.oldManDialogueImg {
+  width: 319px;
+  height: 266px;
+  flex-shrink: 0;
+  aspect-ratio: 319/266;
+}
+
+.bottleLargeOnly {
+  display: none;
+}
+
+.dialogueButtonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.messageBoxButton {
+  background-color: #2D1B4D;
+  color: #F4E9DC;
+  font-size: 2em;
+  text-align: center;
+  padding: 11px 0;
+  flex: 1;
+}
+
+.messageBoxButton:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.replydialogueButtonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+
+
+
+
+
+@media only screen and (min-width: 1020px) {
+  .introductionBox {
+    width: 50%;
+    height: 70%;
+
+  }
+
+  .bottleLargeOnly {
+    display: block;
+  }
+
+  .introductionBox h1 {
+    font-size: 11em;
+  }
+
+  .introductionBox p {
+    font-size: 2.5em;
+  }
+
+  .homeBottle {
+    width: 547px;
+    height: 547px;
+    flex-shrink: 0;
+    aspect-ratio: 1/1;
+    top: 400px;
+    left: 0;
+  }
+
+  .homeOldman {
+    width: 472px;
+    height: 394px;
+    flex-shrink: 0;
+    aspect-ratio: 236/197;
+    position: absolute;
+    top: 300px;
+    left: 600px;
+  }
+
+  .homeTreasure {
+    width: 770px;
+    height: 739.2px;
+    flex-shrink: 0;
+    aspect-ratio: 770.00/739.20;
+  }
+
+  #bottleScreen:checked~.bottleScreen {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+  }
+
+  .bottleStart {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    box-sizing: border-box;
+    padding: 0 37px 52px 37px;
+    position: relative;
+  }
+
+  .bottleImg {
+    width: 600px;
+    height: 600px;
+    position: relative;
+    margin-bottom: -140px;
+    margin-left: -100px;
+  }
+
+  .bottleImg img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  .dialogueBox {
+    width: 100%;
+    background: #2D1B4D;
+    box-shadow: 0 4px 12.4px 7px rgba(0, 34, 255, 0.25);
+    padding: 30px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+  }
+
+  .dialogueBox p {
+    color: #EDEDED;
+    font-family: DotGothic16;
+    font-size: 2em;
+    text-align: left;
+  }
+
+  .dialogueButton {
+    background-color: #EDEDED;
+    color: #2D1B4D;
+    font-size: 2em;
+    text-align: center;
+    padding: 11px 30px;
+    border: none;
+    max-width: 200px;
+    width: auto;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+  }
+
+
+  .dialogueButtonGroup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    margin-top: auto;
+  }
+
+
+
+
+  #messageScreen:checked~.messageScreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bottleMessage {
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0 37px 52px 37px;
+    gap: 40px;
+  }
+
+  .messageBox {
+    flex: 1;
+    background-color: #EDEDED;
+    color: #2D1B4D;
+    padding: 20px;
+    text-align: center;
+    height: 90vh;
+    box-shadow: 0 5px 29.7px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  .bottleMessage p {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+
+  .messageBoxButton {
+    background-color: #2D1B4D;
+    color: #F4E9DC;
+    font-size: 2em;
+    text-align: center;
+    padding: 6px 0;
+  }
+
+  .messageBoxButton:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .messageBox form input[type="text"] {
+    width: 100%;
+    height: 30vh;
+    box-sizing: border-box;
+    font-size: 1.5em;
+    padding: 0.3em 0.5em;
+  }
+
+  #oldManScreen:checked~.oldManScreen {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    width: 100vw;
+  }
+
+
+
+  .dialogueBox h3 {
+    color: #EDEDED;
+    font-size: 3em;
+    text-align: left;
+  }
+
+  .dialogueWrapper {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 90vw;
+    box-sizing: border-box;
+    padding: 0 37px 52px 37px;
+    position: relative;
+  }
+
+  .oldManDialogueImg {
+    width: 600px;
+    height: 600px;
+    position: relative;
+    margin-bottom: -140px;
+    margin-left: -50px;
+  }
+
+  .oldManDialogueImg img {
+    width: 607px;
+    height: 506px;
+    flex-shrink: 0;
+    aspect-ratio: 607/506;
+  }
+
+  .replyButton {
+    background-color: #EDEDED;
+    color: #2D1B4D;
+    font-size: 2em;
+    margin-left: auto;
+    padding: 11px 31px 11px 31px;
+  }
+
+  .replyButton:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .replyOptionButton {
+    background-color: #EDEDED;
+    color: #2D1B4D;
+    font-size: 2em;
+    text-align: center;
+    padding: 11px 0 11px 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .dialogueText {
+    max-height: 100px;
+    overflow-y: auto;
+    padding-right: 10px;
+  }
+
+  .treasurekeeperdialogueImg {
+    margin-bottom: -100px;
+    width: 550px;
+    height: 550px;
+    flex-shrink: 0;
+    aspect-ratio: 1/1;
+    text-align: left;
+  }
+
+  #treasureScreen:checked~.treasureScreen {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    width: 100vw;
+  }
+
+  .shopScroll {
+    flex-direction: row;
+    max-height: none;
+    overflow-y: visible;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .shopCards {
+    width: auto;
+    flex: 0 1 auto;
+  }
+
+
+  .Star img,
+  .bunny img,
+  .loveLetter img {
+    width: 293px;
+    height: 293px;
+    flex-shrink: 0;
+    aspect-ratio: 1/1;
+  }
+
+  .Star,
+  .bunny,
+  .loveLetter {
+    gap: 30px;
+  }
+
+  .starDialogueImg,
+  .bunnyDialogueImg,
+  .loveLetterDialogueImg {
+    width: 526px;
+    height: 526px;
+    flex-shrink: 0;
+    aspect-ratio: 1/1;
+
+  }
+
+  .shopMenu h2 {
+    font-size: 4em;
+
+  }
+
+  .shopMenu h3 {
+    font-size: 4em;
+
+  }
+
+  .shopButton {
+    font-size: 2em;
+    padding: 10px 35px;
+  }
+
+  .replydialogueButtonGroup {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 20px;
+    margin-top: auto;
+    margin-left: auto;
+
+  }
+
+  .bunnyDialogueImg {
+    width: 526px;
+    height: 526px;
+    flex-shrink: 0;
+    aspect-ratio: 1/1;
+  }
+
+  .dialogueBoxScroll {
+    max-height: 100%;
+    overflow-y: auto;
+    padding-right: 10px;
+  }
+
+}

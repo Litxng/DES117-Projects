@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Drift</title>
+
+    <!--font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- Screen Control Radios -->
+    <input type="radio" name="screen" id="introScreen" hidden checked />
+    <input type="radio" name="screen" id="homeScreen" hidden />
+    <input type="radio" name="screen" id="bottleScreen" hidden />
+    <input type="radio" name="screen" id="messageScreen" hidden />
+    <input type="radio" name="screen" id="messageReplyScreen" hidden />
+    <input type="radio" name="screen" id="oldManScreen" hidden />
+    <input type="radio" name="screen" id="treasureScreen" hidden />
+    <input type="radio" name="screen" id="shopScreen" hidden />
+
+    <!-- Shop Radios -->
+    <input type="radio" name="screen" id="starDialogueScreen" hidden />
+    <input type="radio" name="screen" id="starBuyScreen" hidden />
+    <input type="radio" name="screen" id="starStoryScreen" hidden />
+
+    <input type="radio" name="screen" id="bunnyDialogueScreen" hidden />
+    <input type="radio" name="screen" id="bunnyBuyScreen" hidden />
+    <input type="radio" name="screen" id="bunnyStoryScreen" hidden />
+
+    <input type="radio" name="screen" id="loveLetterDialogueScreen" hidden />
+    <input type="radio" name="screen" id="loveLetterBuyScreen" hidden />
+    <input type="radio" name="screen" id="loveLetterStoryScreen" hidden />
+
+
+    <!-- Old Man Dialogue Radios -->
+    <input type="radio" name="oldManDialogue" id="greet" hidden checked />
+    <input type="radio" name="oldManDialogue" id="replyOptionOne" hidden />
+    <input type="radio" name="oldManDialogue" id="oldManYes" hidden />
+    <input type="radio" name="oldManDialogue" id="oldManNo" hidden />
+    <input type="radio" name="oldManDialogue" id="replyOptionTwo" hidden />
+    <input type="radio" name="oldManDialogue" id="OldManStory" hidden />
+    <input type="radio" name="oldManDialogue" id="OldManHope" hidden />
+    <input type="radio" name="oldManDialogue" id="replyOptionFour" hidden />
+    <input type="radio" name="oldManDialogue" id="oldManEnd" hidden />
+
+
+
+    <!-- Introduction Screen -->
+    <section class="screen introScreen">
+        <div class="introBackground"></div>
+        <div class="introductionBox">
+            <h1 id="introHeading">DRIFT</h1>
+            <p class="paragraph">
+                Somewhere between the waves, the stars, and the sand, a message drifts,
+                waiting to be found. Open the bottle. Leave a piece of yourself behind.
+            </p>
+            <label for="homeScreen" class="startButton">Begin the Drift</label>
+        </div>
+    </section>
+
+    <!-- Home Screen -->
+    <section class="screen homeScreen">
+        <div class="background"></div>
+        <div class="container">
+
+            <div class="player">
+                <h3>Now Playing</h3>
+                <audio controls loop>
+                    <source src="assets/lofi.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <label for="bottleScreen" class="clickable">
+                <img src="assets/bottle.png" alt="bottle with message in it" class="homeBottle">
+            </label>
+            <label for="oldManScreen" class="clickable">
+                <img src="assets/oldman.png" alt="old man sitting on a bench" class="homeOldman">
+            </label>
+            <label for="treasureScreen" class="clickable">
+                <img src="assets/treasurekeeper.png" alt="treasure keeper image" class="homeTreasure">
+            </label>
+        </div>
+    </section>
+
+    <!-- Bottle Start Screen -->
+    <section class="screen bottleScreen">
+        <div class="bottleStart">
+            <div class="bottleImg">
+                <img src="assets/bottle.png" />
+            </div>
+            <div class="dialogueBox">
+                <p>You found a bottle! Do you want to open it?</p>
+                <div class="dialogueButtonGroup">
+                    <label for="messageScreen" class="dialogueButton">Yes</label>
+                    <label for="homeScreen" class="dialogueButton">No</label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Message Screen -->
+    <section class="screen messageScreen">
+        <div class="bottleMessage">
+            <div class="bottleImg">
+                <img src="assets/bottle.png" />
+            </div>
+            <div class="messageBox">
+                <p>
+                    Hihi stranger!! I hope your day is going okay. Stay hydrated and always
+                    show off that cute smile of yours
+                </p>
+                <div class="dialogueButtonGroup">
+                    <label for="messageReplyScreen" class="messageBoxButton">Add to the Drift</label>
+                    <label for="bottleScreen" class="messageBoxButton">Throw it back</label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Message Reply Screen -->
+    <section class="screen messageReplyScreen">
+        <div class="bottleMessage">
+            <div class="bottleImg bottleLargeOnly">
+                <img src="assets/bottle.png" alt="Bottle" />
+            </div>
+            <div class="messageBox">
+                <blockquote>"Hihi stranger!! I hope your day is going okay. Stay hydrated and always
+                    show off that cute smile of yours"</blockquote>
+                <p>Leave a message for someone else to find...</p>
+                <form>
+                    <input type="text" placeholder="Write your message...">
+                </form>
+                <label for="homeScreen" class="messageBoxButton">Add and Throw</label>
+            </div>
+        </div>
+    </section>
+
+    <!-- Old Man Screen -->
+    <section class="screen oldManScreen">
+        <div class="background"></div>
+        <div class="dialogue" id="dialogueGreet">
+            <div class="dialogueWrapper">
+                <img class="oldManDialogueImg" src="assets/oldman.png" alt="Old Man" />
+                <div class="dialogueBox">
+                    <h3>Old Man</h3>
+                    <p>Ah, hello there, young one… looking for bottles too?</p>
+                    <label for="replyOptionOne" class="replyButton">reply</label>
+                </div>
+            </div>
+        </div>
+        <div class="dialogue" id="replyOptionOne">
+            <div class="dialogueWrapper">
+                <div class="dialogueBox">
+                    <label for="oldManYes" class="replyOptionButton">Yes, I’m curious what people write in these
+                        bottles</label>
+                    <label for="oldManNo" class="replyOptionButton">Nope just passing by</label>
+                    <label for="homeScreen" class="replyOptionButton">stare and awkwardly leave....</label>
+                </div>
+            </div>
+        </div>
+        <div class="dialogue" id="oldManYes">
+            <div class="dialogueWrapper">
+                <img class="oldManDialogueImg" src="assets/oldman.png" />
+                <div class="dialogueBox">
+                    <h3>Old Man</h3>
+                    <p>Then maybe you can help me… keep an eye out for one addressed to <em>Carl</em>.</p>
+                    <label for="replyOptionTwo" class="replyButton">reply</label>
+                </div>
+            </div>
+        </div>
+        <div class="dialogue" id="oldManNo">
+            <div class="dialogueWrapper">
+                <img class="oldManDialogueImg" src="assets/oldman.png" />
+                <div class="dialogueBox">
+                    <h3>Old Man</h3>
+                    <p>Ah… I see. Still, if you ever find a bottle with my name on it, let me know.</p>
+                    <label for="replyOptionTwo" class="replyButton">reply</label>
+                </div>
+            </div>
+        </div>
+        <div class="dialogue" id="replyOptionTwo">
+            <div class="dialogueWrapper">
+                <label for="OldManStory" class="replyOptionButton">Who is it Carl?</label>
+            </div>
+        </div>
+        <div class="dialogue" id="OldManStory">
+            <div class="dialogueWrapper">
+                <img class="oldManDialogueImg" src="assets/oldman.png" />
+                <div class="dialogueBox">
+                    <h3>Carl</h3>
+                    <div class="dialogueText">
+                        <p>haha I forgot to introduce myself, I am Carl.</p>
+                        <p>I am waiting for a message from the love of my life. She loves the Sea and one day she
+                            decided to
+                            leave
+                            to chase her dreams.</p>
+                        <p>Before she left, she promised that if I find the bottle that she sent me, she will come back
+                            to
+                            me.</p>
+                    </div>
+                    <label for="OldManHope" class="replyButton">Next</label>
+                </div>
+            </div>
+        </div>
+        <div class="dialogue" id="OldManHope">
+            <div class="dialogueWrapper">
+                <img class="oldManDialogueImg" src="assets/oldman.png" />
+                <div class="dialogueBox">
+                    <h3>Carl</h3>
+                    <div class="dialogueText">
+                        <p>I’ve been waiting here every day for 30 years… I don’t know how many more tides I have left.
+                        </p>
+                        <p>But something tells me that you will be my lucky charm. You will be the one to help me find
+                            it.
+                        </p>
+                    </div>
+                    <label for="replyOptionFour" class="replyButton">reply</label>
+                </div>
+            </div>
+        </div>
+        <div class="dialogue" id="replyOptionFour">
+            <div class="dialogueWrapper">
+                <label for="oldManEnd" class="replyOptionButton">Don't worry Carl, I promise that I will help
+                    you</label>
+            </div>
+        </div>
+        <div class="dialogue" id="oldManEnd">
+            <div class="dialogueWrapper">
+                <img class="oldManDialogueImg" src="assets/oldman.png" />
+                <div class="dialogueBox">
+                    <h3>Carl</h3>
+                    <p>Thank you so much young one, I will be here waiting every day.</p>
+                    <label for="homeScreen" class="replyButton">Home</label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Treasurekeeper dialogue Screen-->
+    <section class="screen treasureScreen">
+        <div class="background"></div>
+        <div class="dialogue" id="treasureKeeperDialogue">
+            <div class="dialogueWrapper">
+                <img class="treasurekeeperdialogueImg" src="assets/treasurekeeper.png" alt="treasure keeper image">
+                <div class="dialogueBox">
+                    <h3>Treasure Keeper</h3>
+                    <p>Come take a look — maybe something’s meant for you.</p>
+                    <label for="shopScreen" class="replyOptionButton">Check Out Shop</label>
+                    <label for="homeScreen" class="replyOptionButton">Home</label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Shop Menu-->
+    <section class="screen shopScreen">
+        <div class="background"></div>
+        <div class="shop">
+
+            <div class="shopMenu">
+                <h2>Today’s Treasures</h2>
+                <div class="shopScroll">
+                    <div class="shopCards">
+                        <div class="Star">
+                            <h3>Star</h3>
+                            <img src="assets/star.png" alt="star image">
+                            <label for="starDialogueScreen" class="shopButton">4 Recycled Bottle</label>
+                        </div>
+                    </div>
+                    <div class="shopCards">
+                        <div class="bunny">
+                            <h3>Bunny</h3>
+                            <img src="assets/bunny.png" alt="bunny image">
+                            <label for="bunnyDialogueScreen" class="shopButton">3 Recycled Bottle</label>
+                        </div>
+                    </div>
+                    <div class="shopCards">
+                        <div class="loveLetter">
+                            <h3>Love Letter</h3>
+                            <img src="assets/loveletter.png" alt="love letter image">
+                            <label for="loveLetterDialogueScreen" class="shopButton">5 Recycled Bottle</label>
+                        </div>
+                    </div>
+                </div>
+                <label for="treasureScreen" class="replyButton">Back</label>
+            </div>
+        </div>
+
+    </section>
+
+    <!--Shop Dialogues-->
+    <section class="screen starDialogueScreen">
+        <div class="dialogueWrapper">
+            <img class="treasurekeeperdialogueImg" src="assets/treasurekeeper.png" alt="treasure keeper image">
+            <div class="dialogueBox">
+                <h3>Treasure Keeper</h3>
+                <p>I found this shining star while fishing. It glows when touched and seems to have a healing effect...
+                </p>
+                <div class="replydialogueButtonGroup">
+                    <label for="starBuyScreen" class="replyButton">Buy</label>
+                    <label for="shopScreen" class="replyButton">Don’t Buy</label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="screen starBuyScreen">
+        <div class="dialogueWrapper">
+            <img class="starDialogueImg" src="assets/star.png" alt="star image" />
+            <div class="dialogueBox">
+                <p>You unlocked shining star. Would you like to read its story?</p>
+                <label for="starStoryScreen" class="replyButton">yes!</label>
+            </div>
+        </div>
+    </section>
+
+    <section class="screen starStoryScreen">
+        <div class="bottleMessage">
+            <img class="starDialogueImg" src="assets/star.png" alt="star image" />
+            <div class="messageBox starStoryDialogue">
+                <div class="dialogueBoxScroll">
+                    <p>The star will only appear for those who need it most.</p>
+                    <p>They say it fell from the sky when the sea stood still.</p>
+                    <p>It fell onto the sand and glowed for 3 nights...</p>
+                    <p>Until a boy, who hadn’t spoken since sickness took his mother, touched it...</p>
+                    <blockquote>“It doesn’t hurt anymore.”</blockquote>
+                    <p>The star disappeared... and goes to the next soul that needs it.</p>
+                </div>
+                <label for="homeScreen" class="selectionButton">Home</label>
+                <label for="shopScreen" class="selectionButton">Shop</label>
+            </div>
+        </div>
+    </section>
+
+    <section class="screen bunnyDialogueScreen">
+        <div class="dialogueWrapper">
+            <img class="treasurekeeperdialogueImg" src="assets/treasurekeeper.png" alt="treasure keeper image">
+            <div class="dialogueBox">
+                <h3>Treasure Keeper</h3>
+                <p>I found this pink bunny on the bench. It is soft and glows faintly under moonlight.</p>
+                <div class="replydialogueButtonGroup">
+                    <label for="bunnyBuyScreen" class="replyButton">Buy</label>
+                    <label for="shopScreen" class="replyButton">Don’t Buy</label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="screen bunnyBuyScreen">
+        <div class="dialogueWrapper">
+            <img class="bunnyDialogueImg" src="assets/bunny.png" alt="bunny image" />
+            <div class="dialogueBox">
+                <p>You unlocked pink bunny. Would you like to read its story?</p>
+                <label for="bunnyStoryScreen" class="replyButton">yes!</label>
+            </div>
+        </div>
+    </section>
+
+    <section class="screen bunnyStoryScreen">
+        <div class="bottleMessage">
+            <img class="bunnyDialogueImg" src="assets/bunny.png" alt="bunny image" />
+            <div class="messageBox bunnyStoryDialogue">
+                <div class="dialogueBoxScroll">
+                    <p>Out of all the treasures that the Treasure Keeper have created, the most precious one is not a
+                        shiny expensive relic but is just a pink bunny plushie. The plush was left on the beach bench
+                        with a note pinned on its ear</p>
+                    <blockquote>“Her name is mimi. She kept me safe during some really...really hard times. I think I am
+                        strong enough to let go of her now. Maybe she will be able to help somebody else” - A
+                    </blockquote>
+                    <p>Little did A know, A also healed bunnies soul and bunny is so proud of A for letting go. </p>
+                </div>
+                <label for="homeScreen" class="selectionButton">Home</label>
+                <label for="shopScreen" class="selectionButton">Shop</label>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="screen loveLetterDialogueScreen">
+        <div class="dialogueWrapper">
+            <img class="treasurekeeperdialogueImg" src="assets/treasurekeeper.png" alt="treasure keeper image">
+            <div class="dialogueBox">
+                <h3>Treasure Keeper</h3>
+                <p>I found this love letter on top of a trashcan. Light but heavy with emotion.</p>
+                <div class="replydialogueButtonGroup">
+                    <label for="loveLetterBuyScreen" class="replyButton">Buy</label>
+                    <label for="shopScreen" class="replyButton">Don’t Buy</label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="screen loveLetterBuyScreen">
+        <div class="dialogueWrapper">
+            <img class="loveLetterDialogueImg" src="assets/loveletter.png" alt="love letter image" />
+            <div class="dialogueBox">
+                <p>You unlocked love letter. Would you like to read its story?</p>
+                <label for="loveLetterStoryScreen" class="replyButton">yes!</label>
+            </div>
+        </div>
+    </section>
+
+    <section class="screen loveLetterStoryScreen">
+        <div class="bottleMessage">
+            <img class="loveLetterDialogueImg" src="assets/loveletter.png" alt="love letter image" />
+            <div class="messageBox loveLetterStoryDialogue">
+                <div class="dialogueBoxScroll">
+                    <p>Dear Rosaria,</p>
+                    <p>I’m sorry I didn’t say this before.</p>
+                    <p>I love you. So, so deeply.</p>
+                    <p>Even though we’re separated by the sky and stars,</p>
+                    <p>our time apart won’t last forever.</p>
+                    <p>We’ll be together again, soon.</p>
+                    <p>- Charles</p>
+                </div>
+                <label for="homeScreen" class="selectionButton">Home</label>
+                <label for="shopScreen" class="selectionButton">Shop</label>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+
+</html>
